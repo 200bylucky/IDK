@@ -1,0 +1,55 @@
+
+
+class employee{
+    public:
+    static double EmployeeBonus;
+    static void setEmployeeBonus(int bonus){EmployeeBonus=bonus;}
+    string EmployeeName;
+    double salary;
+
+    employee(string EmployeeName,double salary)
+    {
+        this->EmployeeName=EmployeeName;
+        this->salary=salary;
+
+    }
+
+    virtual void showdetails()
+    {
+         cout<<EmployeeName<<endl;
+         cout<<salary<<endl;
+    }
+
+};
+class Demployee:public employee{
+    private:
+    string Dname;
+    public: Demployee(string EmployeeName,double salary,string Dname):employee(EmployeeName,salary){
+        this->Dname=Dname;
+    }
+virtual void showdetails()
+    {
+         cout<<EmployeeName<<endl;
+         cout<<salary<<endl;
+         cout<<Dname<<endl;
+    }
+};
+template
+void showdetails(T & obj){
+    obj.showdetails();
+}
+double employee::EmployeeBonus=0;
+int main(int argc, char** argv){
+    employee::setEmployeeBonus(2000)
+    int SumBonus=0;
+    employee[0]=new employee("zura",2000);
+     employee[1]=new employee("lasha",1500);#
+      employee[2]=new employee("Dato",5000);
+       employee[3]=new employee("Sandro",4300);
+        employee[4]=new employee("Jano",1100);
+
+        for(int i=0,i<5,i++){
+            SumBonus +=employee[i]->salary;
+        }
+        cout<<SumBonus<<endl;
+}
